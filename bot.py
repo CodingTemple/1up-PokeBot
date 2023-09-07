@@ -53,6 +53,11 @@ async def on_message(message):
     if "hello" in message.content.lower():
         await message.add_reaction("👋")
 
+    # Check if it's a command message
+    ctx = await bot.get_context(message)
+    if ctx.valid:  # This means the message is a command
+        return # Don't process command messages
+
     # Split the message content into words and convert to lowercase for comparison
     words = {word.lower() for word in message.content.split()}
 
@@ -75,8 +80,6 @@ async def on_message(message):
             embed.set_image(url=sprite_url)
             await message.channel.send(embed=embed)
 
-    # This line is important if you're using the on_message event alongside commands
-    await bot.process_commands(message)
 
 
 
