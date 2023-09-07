@@ -4,6 +4,8 @@ import requests
 import os
 from dotenv import load_dotenv
 
+# https://discordpy.readthedocs.io/en/stable/api.html
+
 load_dotenv()
 TOKEN = os.environ.get('DISCORD_BOT_TOKEN')  # Replace 'DISCORD_BOT_TOKEN' with your bot's token in your .env
 
@@ -38,10 +40,18 @@ async def hello(ctx):
 async def on_message(message):
     """Listens for mentions of pokemon names and replies with their image"""
 
-
     # Ensure the bot doesn't respond to its own messages
     if message.author == bot.user:
         return
+    
+    # To Copy and Paste the standard Emojis
+    # Windows: Press Windows + . (period) or Windows + ; (semicolon) to open the emoji picker. Navigate to the desired emoji, click on it, and it will be inserted where your cursor is.
+    # Mac: Press Command + Control + Space to open the emoji picker.
+    # Linux: Depending on your distribution and desktop environment, there might be an emoji picker available. If not, you might have to copy and paste the emoji from an online source.
+    # https://unicode.org/emoji/charts/full-emoji-list.html OR https://emojipedia.org/
+
+    if "hello" in message.content.lower():
+        await message.add_reaction("👋")
 
     # Split the message content into words and convert to lowercase for comparison
     words = {word.lower() for word in message.content.split()}
