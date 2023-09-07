@@ -34,7 +34,10 @@ from dotenv import load_dotenv
     # DISCORD_BOT_TOKEN=YOUR_TOKEN_FROM_DISCORD_SITE
         # Note: No spaces around the equal sign
         # This is the towken fromthe Bot page of the Discord site we retrieved earlier
-
+# Create a gitignore (If you are uploading this project to github)
+    # Add these two lines to your gitignore (and any others you feel you need)
+    # venv/
+    # .env
 
 
 # Load the environmental variables (The Toke from Discord)
