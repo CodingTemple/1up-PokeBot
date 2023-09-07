@@ -6,6 +6,19 @@ from dotenv import load_dotenv
 
 # https://discordpy.readthedocs.io/en/stable/api.html
 
+# Create an app on the developer portal https://discord.com/developers/applications
+    # Give it a name and agree to TOS.
+    # Optional: Fill out App information.
+    # Click "Bot" on the Left Menu.
+        # Click "Reset Token".
+        # Copy the Token and save this information; you will not be able to retrieve it later.
+            # Be sure to keep this token private and DO NOT upload to GitHub (Discord will find it immediately and ban your bot).
+    # Set the app's Permissions:
+        # Click on "OAuth2" on the left menu -> "URL Generator".
+        # Click the box for "bot".
+        # A new set of privileges should appear. Click the desired privileges (in our case: Send Messages, Add Reactions, Read Message History).
+        # A URL is now in the "Generated URL" spot at the bottom of the page. This is the URL to allow you to invite your bot to Discord servers. Visit that link and add the bot to any servers for which you are the administrator.
+
 load_dotenv()
 TOKEN = os.environ.get('DISCORD_BOT_TOKEN')  # Replace 'DISCORD_BOT_TOKEN' with your bot's token in your .env
 
@@ -34,7 +47,7 @@ async def on_member_join(member):
 @bot.command()
 async def hello(ctx):
     """Responds with a greeting."""
-    await ctx.send("Hello there!")
+    await ctx.send("Hello there from Unova!")
 
 @bot.listen('on_message')
 async def on_message(message):
