@@ -13,11 +13,13 @@ from dotenv import load_dotenv
         # Click "Reset Token".
         # Copy the Token and save this information; you will not be able to retrieve it later.
             # Be sure to keep this token private and DO NOT upload to GitHub (Discord will find it immediately and ban your bot).
+        # On the Bot Page turn on Presence Intent, Server Members Intent, MESSAGE CONTENT INTENT
     # Set the app's Permissions:
         # Click on "OAuth2" on the left menu -> "URL Generator".
         # Click the box for "bot".
         # A new set of privileges should appear. Click the desired privileges (in our case: Send Messages, Add Reactions, Read Message History).
         # A URL is now in the "Generated URL" spot at the bottom of the page. This is the URL to allow you to invite your bot to Discord servers. Visit that link and add the bot to any servers for which you are the administrator.
+
 
 # Set up Your Local environment
 # Create a new Virtual Environment
@@ -28,12 +30,12 @@ from dotenv import load_dotenv
     # On Windows
     # venv\Scripts\activate
 # Install the tools we need
-    # pip install requests python-dotenv discord requests
+    # pip install requests python-dotenv discord
 # Create a .env file
     # in the .env file add the line
     # DISCORD_BOT_TOKEN=YOUR_TOKEN_FROM_DISCORD_SITE
         # Note: No spaces around the equal sign
-        # This is the towken fromthe Bot page of the Discord site we retrieved earlier
+        # This is the token fromthe Bot page of the Discord site we retrieved earlier
 # Create a gitignore (If you are uploading this project to github)
     # Add these two lines to your gitignore (and any others you feel you need)
     # venv/
