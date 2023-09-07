@@ -29,7 +29,7 @@ async def on_ready():
 @bot.event
 async def on_member_join(member):
     """Responds with a greeting to the user when they join"""
-    await member.send(f'Welcome to the server, {member.name}!')
+    await member.send(f'Welcome to the Unova server, {member.name}!')
 
 @bot.command()
 async def hello(ctx):
